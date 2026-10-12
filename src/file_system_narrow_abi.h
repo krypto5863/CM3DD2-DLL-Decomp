@@ -1,7 +1,7 @@
 #pragma once
 
 // Callable narrow (UTF-8) file-system interface at complete object +0x20 (Windows and Archive file systems only).
-// Evidence and slot tables: docs/filesystem-narrow-abi-review.md.
+// Evidence and slot tables: the project notes (not part of this repository).
 //
 // The subobject is attached to an object buffer created by wide_abi::createAdapter (same placement: wide at +0x10,
 // narrow at +0x20, shared virtual base at +0x1e0 / +0x110). Its vptr table is wide_abi::NarrowVtbl. Like the original

@@ -33,7 +33,7 @@
 // and FUN_1800737f0 / FUN_1800739e0 (console delegate).
 // UNVERIFIED: the engine's own behaviour (embedded upstream, not rebuilt from pseudocode); the built-in
 // RegExp is not provided. Script exceptions are caught at the wrapper boundary;
-// Engine version and unsupported built-ins remain compatibility limits; see COLLABORATION.md.
+// Engine version and unsupported built-ins remain compatibility limits; see the project notes (not part of this repository).
 
 struct CM3D2_TjsParamAccess {  // ParamAccess: +0 args, +8 count, +0x10 name key, +0x18 class unique id
     cm3d2::internal::TjsVariant** arguments;

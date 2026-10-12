@@ -1,5 +1,5 @@
 // Valid-input contract for the reproduced codecvt_utf8<wchar_t, 0x10ffff> facet (src/msvc_utf8_facet.h). Expectations come from the decompiled
-// do_in 0x18006bd00 / do_out 0x18006bbd0, not from the C++ standard; see docs/filesystem-conversion-facet-review.md.
+// do_in 0x18006bd00 / do_out 0x18006bbd0, not from the C++ standard; see the project notes (not part of this repository).
 #include "msvc_utf8_facet.h"
 
 #include <cstdio>

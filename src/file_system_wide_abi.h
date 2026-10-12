@@ -1,7 +1,7 @@
 #pragma once
 
 // Callable InterfaceFileSystemWide / shared-virtual-base adapter.
-// Evidence and slot tables: docs/filesystem-wide-abi-review.md.
+// Evidence and slot tables: the project notes (not part of this repository).
 //
 // This is a SEMANTIC adapter, not a literal copy of the native objects: it allocates a zeroed buffer of the
 // native object size, places the wide-interface vptr, its vbptr/vbtable, the virtual-base vptr (with vtordisp

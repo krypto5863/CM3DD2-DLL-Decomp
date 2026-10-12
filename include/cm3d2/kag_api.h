@@ -10,7 +10,7 @@ extern "C" {
  * DLL_KAG_* (50 exports, ordinals 99..148): the KAG scenario interpreter (KagScript over BasicKagScript) on top of
  * the embedded KAGParser and a TjsScript. Handles are pointers to the script object passed by address, like the
  * other groups. Strings are UTF-8. Getters that fill a buffer truncate to capacity - 1 and always terminate.
- * See docs/kag-reconstruction.md for what is verified.
+ * See the project notes (not part of this repository) for what is verified.
  */
 typedef void* CM3D2_KagHandle;
 typedef struct CM3D2_KagTagSupport CM3D2_KagTagSupport;   /* argument of tag callbacks */

@@ -1,7 +1,7 @@
 #pragma once
 
 // The original's std::wstring_convert<std::codecvt_utf8<wchar_t, 0x10ffff, 0>> (default constructed: no error strings), reproduced from
-// do_in 0x18006bd00, do_out 0x18006bbd0 and the wrapper loops FUN_1800711c0 / FUN_18006c3f0 (docs/filesystem-conversion-facet-review.md).
+// do_in 0x18006bd00, do_out 0x18006bbd0 and the wrapper loops FUN_1800711c0 / FUN_18006c3f0 (the project notes (not part of this repository)).
 //
 // Decoding (UTF-8 -> 16-bit wchar_t), exactly as the binary does it:
 //   * lead < 0x80: one unit; 0x80..0xBF as a lead: error; < 0xE0: 1 continuation; < 0xF0: 2; < 0xF8: 3; >= 0xF8: 4 (< 0xFC) or 5.

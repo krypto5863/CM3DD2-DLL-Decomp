@@ -5,7 +5,7 @@
 `fs_archive_battery.cpp` / `fs_archive_battery.ps1`: four freshly generated plain
 WARC fixtures only, three mount/auto-path order scenarios. CMake target
 `fs_archive_battery`; the runner checks the original SHA and the probe has a
-20-second watchdog. Review and command: `docs/archive-filesystem-order-review.md`.
+20-second watchdog. Review and command: `the project notes (not part of this repository)`.
 2026-10-12: 841 transcript lines identical, all six runs exit 0. Wide opens are
 checked through KAG/menu consumers; native vtable layout is not claimed.
 `file_system_archive_synthetic_contract` retains focused regression expectations
@@ -21,7 +21,7 @@ arguments `<original.dll.orig|internal> <async 0/1> <preset 0/1>`, three generat
 plain WARCs only. The native backend flips the original virtual-base mode flag;
 the internal backend uses the source-level setter, not a reconstructed vtable.
 Archive results: 86 identical lines across four cases, all eight exits 0.
-Evidence/limits: `docs/filesystem-delegate-job-review.md`. Never substitute an
+Evidence/limits: `the project notes (not part of this repository)`. Never substitute an
 unknown DLL for the verified original when using the native-layout setter.
 
 `diff_all.cpp` loads a cm3d2 DLL by path and runs one named battery against its

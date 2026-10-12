@@ -1,5 +1,5 @@
 // Reconstructed cm3d2 additions, not upstream TJS source.
-// Native evidence: rea-tjs-builtins-evidence.json, see docs/tjs-builtins-reconstruction.md.
+// Native evidence: rea-tjs-builtins-evidence.json, see the project notes (not part of this repository).
 #include "tjsCommHead.h"
 #include "tjsDictionary.h"
 #include "tjsArray.h"

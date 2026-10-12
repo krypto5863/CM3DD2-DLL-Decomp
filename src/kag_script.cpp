@@ -10,7 +10,7 @@
 #include <cstdlib>
 #include <cstring>
 
-// KagScript / BasicKagScript reconstruction (docs/kag-reconstruction.md). Every behaviour below that was not read from
+// KagScript / BasicKagScript reconstruction (the project notes (not part of this repository)). Every behaviour below that was not read from
 // pseudocode or confirmed against the original DLL is marked UNVERIFIED.
 namespace {
 

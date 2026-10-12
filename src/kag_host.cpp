@@ -9,7 +9,7 @@
 
 // Host services for the embedded Kirikiri KAGParser (third_party/kagparser). The parser source is the open-source
 // Kirikiri component, not recovered cm3d2 code; this file replaces the Kirikiri host layer it normally links against.
-// Message texts are the defaults read from the DLL (docs/kag-reconstruction.md). UNVERIFIED: TVPAddLog destination,
+// Message texts are the defaults read from the DLL (the project notes (not part of this repository)). UNVERIFIED: TVPAddLog destination,
 // TVPExtractStorageName details, the compact-event hook (never fired), and how the original reports a missing file.
 
 // Message defaults recovered from cm3d2.dll (holder names at 0x1801e9638..0x1801e9c68; the text follows each name).

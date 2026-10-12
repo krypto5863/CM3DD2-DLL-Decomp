@@ -27,7 +27,7 @@ Local patches (search for "cm3d2" in the sources):
 - shims/*.h replace the Kirikiri host headers (ScriptMgnIntf, StorageImpl, TextStream, MsgIntf, EventIntf, ...); the host functions
   are implemented in src/kag_host.cpp and routed to the DLL file system and the TJS engine.
 
-Known remaining differences from the DLL parser are listed in docs/kag-reconstruction.md.
+Known remaining differences from the DLL parser are listed in the project notes (not part of this repository).
 
 ## Console / error reporting patches (2026-10-11)
-LoadScenario logs "Scenario loaded : <name>" after every load (no separator line); LoadScenarioString logs it too; GoToLabel reports a missing scenario/label through TVPKagReport instead of throwing and logs "<short> => jumped to : <label>"; GoToStorageAndLabel catches eTJSError from the load and reports it as "[eTJSError]...". See docs/kag-reconstruction.md "Console output".
+LoadScenario logs "Scenario loaded : <name>" after every load (no separator line); LoadScenarioString logs it too; GoToLabel reports a missing scenario/label through TVPKagReport instead of throwing and logs "<short> => jumped to : <label>"; GoToStorageAndLabel catches eTJSError from the load and reports it as "[eTJSError]...". See the project notes (not part of this repository) "Console output".

@@ -71,7 +71,7 @@ public:
 
 	void Clear();
 
-	// cm3d2 native additions; see docs/tjs-builtins-reconstruction.md.
+	// cm3d2 native additions; see the project notes (not part of this repository).
 	ttstr ToStructString();
 	iTJSDispatch2 *GetKeyArray(); // caller owns one reference
 

@@ -1,7 +1,7 @@
 #pragma once
 
 // Raw images of the two MSVC hash containers the original exposes through the wide/base slots.
-// Evidence: docs/filesystem-map-abi-review.md. Everything is built by hand (never through std::unordered_*, whose
+// Evidence: the project notes (not part of this repository). Everything is built by hand (never through std::unordered_*, whose
 // private layout is toolset specific), so the bytes match the original's 14.x STL layout:
 //
 //   container image (0x40 bytes)          node (set: 0x30 bytes, map: 0x38 bytes)

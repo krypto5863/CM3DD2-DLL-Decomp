@@ -1,5 +1,5 @@
 // Reconstructed native introsort, not upstream code. See
-// rea-tjs-large-sort-evidence.json and docs/tjs-array-sort-reconstruction.md.
+// rea-tjs-large-sort-evidence.json and the project notes (not part of this repository).
 #pragma once
 #include <cstddef>
 #include <string>

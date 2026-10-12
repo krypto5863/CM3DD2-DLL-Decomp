@@ -21,7 +21,7 @@ using TJS::tjs_int;
 using TJS::tjs_uint;
 using TJS::tjs_uint32;
 
-// Message texts recovered from the DLL (docs/kag-reconstruction.md).
+// Message texts recovered from the DLL (the project notes (not part of this repository)).
 extern const tjs_char* TVPKAGNoLine;
 extern const tjs_char* TVPKAGCannotOmmitFirstLabelName;
 extern const tjs_char* TVPKAGFileNotFound;

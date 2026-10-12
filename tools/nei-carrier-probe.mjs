@@ -1,6 +1,6 @@
 // Verification tools for the NEI/CSV carrier. Usage:
 //   node tools/nei-carrier-probe.mjs <file.nei> <out.bin>   decrypt carrier with CSV key
-//   tools/nei_dump.cpp: links cm3d2_reconstructed; prints every cell as hex (see COLLABORATION.md)
+//   tools/nei_dump.cpp: links cm3d2_reconstructed; prints every cell as hex (see the project notes (not part of this repository))
 import { readFileSync } from "node:fs";
 import { createDecipheriv } from "node:crypto";
 
