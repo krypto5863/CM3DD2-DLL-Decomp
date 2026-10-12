@@ -1,0 +1,1027 @@
+tree mode set
+SetBaseDirectory=1
+AddFolder(rel1)=1
+AddFolder(rel2)=1
+AddFolder(rel1 again)=0
+-- before auto paths
+lookup 'same.txt': e=1 g=1 rel2-same
+lookup 'only-a.txt': e=0 g=0 <none>
+lookup 'only-z.txt': e=0 g=0 <none>
+lookup 'only-inner.txt': e=0 g=0 <none>
+lookup 'r2.txt': e=1 g=1 r2
+lookup 'mixed.case.txt': e=1 g=1 mixed
+lookup 'sp ace.txt': e=1 g=1 spaced
+lookup 'a_sub\same.txt': e=1 g=1 rel2-a-same
+lookup 'a_sub/same.txt': e=1 g=1 rel2-a-same
+lookup 'A_SUB\Same.TXT': e=1 g=1 rel2-a-same
+lookup 'z_sub\same.txt': e=1 g=1 z
+lookup 'a_sub\inner\same.txt': e=1 g=1 inner
+lookup 'inner\same.txt': e=0 g=0 <none>
+lookup 'a_sub\only-a.txt': e=1 g=1 only-a
+lookup 'a_sub\only-z.txt': e=0 g=0 <none>
+lookup 'z_sub\only-z.txt': e=1 g=1 only-z
+lookup 'a_sub\inner\only-inner.txt': e=1 g=1 only-inner
+lookup 'rel1\a_sub\same.txt': e=0 g=0 <none>
+lookup 'missing\same.txt': e=0 g=0 <none>
+lookup 'a_sub\missing.txt': e=0 g=0 <none>
+lookup 'a_sub': e=0 g=0 <none>
+lookup 'a_sub\': e=0 g=0 <none>
+lookup '\same.txt': e=1 g=1 rel2-same
+lookup 'a_sub\inner\': e=0 g=0 <none>
+lookup 'keep.d\kept.txt': e=1 g=1 kept
+lookup 'kept.txt': e=0 g=0 <none>
+lookup 'hidden.txt': e=0 g=0 <none>
+lookup '.works1\hidden.txt': e=0 g=0 <none>
+AddAutoPath(a_sub)=1
+AddAutoPath(A_SUB again)=0
+AddAutoPath(a_sub\inner)=1
+AddAutoPath(z_sub)=1
+AddAutoPath(nope)=1
+-- after auto paths
+lookup 'same.txt': e=1 g=1 rel2-a-same
+lookup 'only-a.txt': e=1 g=1 only-a
+lookup 'only-z.txt': e=1 g=1 only-z
+lookup 'only-inner.txt': e=1 g=1 only-inner
+lookup 'r2.txt': e=1 g=1 r2
+lookup 'mixed.case.txt': e=1 g=1 mixed
+lookup 'sp ace.txt': e=1 g=1 spaced
+lookup 'a_sub\same.txt': e=1 g=1 rel2-a-same
+lookup 'a_sub/same.txt': e=1 g=1 rel2-a-same
+lookup 'A_SUB\Same.TXT': e=1 g=1 rel2-a-same
+lookup 'z_sub\same.txt': e=1 g=1 z
+lookup 'a_sub\inner\same.txt': e=1 g=1 inner
+lookup 'inner\same.txt': e=1 g=1 inner
+lookup 'a_sub\only-a.txt': e=1 g=1 only-a
+lookup 'a_sub\only-z.txt': e=0 g=0 <none>
+lookup 'z_sub\only-z.txt': e=1 g=1 only-z
+lookup 'a_sub\inner\only-inner.txt': e=1 g=1 only-inner
+lookup 'rel1\a_sub\same.txt': e=0 g=0 <none>
+lookup 'missing\same.txt': e=0 g=0 <none>
+lookup 'a_sub\missing.txt': e=0 g=0 <none>
+lookup 'a_sub': e=0 g=0 <none>
+lookup 'a_sub\': e=0 g=0 <none>
+lookup '\same.txt': e=1 g=1 rel2-a-same
+lookup 'a_sub\inner\': e=0 g=0 <none>
+lookup 'keep.d\kept.txt': e=1 g=1 kept
+lookup 'kept.txt': e=0 g=0 <none>
+lookup 'hidden.txt': e=0 g=0 <none>
+lookup '.works1\hidden.txt': e=0 g=0 <none>
+CreateList('', 0) count=3
+  [0] a_sub\
+  [1] keep.d\
+  [2] z_sub\
+CreateList('', 1) count=4
+  [0] a_sub\
+  [1] a_sub\inner\
+  [2] keep.d\
+  [3] z_sub\
+CreateList('', 2) count=4
+  [0] mixed.case.txt
+  [1] r2.txt
+  [2] same.txt
+  [3] sp ace.txt
+CreateList('', 3) count=12
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+  [2] a_sub\only-a.txt
+  [3] a_sub\only-r2a.txt
+  [4] a_sub\same.txt
+  [5] keep.d\kept.txt
+  [6] mixed.case.txt
+  [7] r2.txt
+  [8] same.txt
+  [9] sp ace.txt
+  [10] z_sub\only-z.txt
+  [11] z_sub\same.txt
+CreateList('*', 0) count=3
+  [0] a_sub\
+  [1] keep.d\
+  [2] z_sub\
+CreateList('*', 1) count=4
+  [0] a_sub\
+  [1] a_sub\inner\
+  [2] keep.d\
+  [3] z_sub\
+CreateList('*', 2) count=4
+  [0] mixed.case.txt
+  [1] r2.txt
+  [2] same.txt
+  [3] sp ace.txt
+CreateList('*', 3) count=12
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+  [2] a_sub\only-a.txt
+  [3] a_sub\only-r2a.txt
+  [4] a_sub\same.txt
+  [5] keep.d\kept.txt
+  [6] mixed.case.txt
+  [7] r2.txt
+  [8] same.txt
+  [9] sp ace.txt
+  [10] z_sub\only-z.txt
+  [11] z_sub\same.txt
+CreateList('a_sub', 0) count=1
+  [0] a_sub\inner\
+CreateList('a_sub', 1) count=1
+  [0] a_sub\inner\
+CreateList('a_sub', 2) count=3
+  [0] a_sub\only-a.txt
+  [1] a_sub\only-r2a.txt
+  [2] a_sub\same.txt
+CreateList('a_sub', 3) count=5
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+  [2] a_sub\only-a.txt
+  [3] a_sub\only-r2a.txt
+  [4] a_sub\same.txt
+CreateList('a_sub\', 0) count=1
+  [0] a_sub\inner\
+CreateList('a_sub\', 1) count=1
+  [0] a_sub\inner\
+CreateList('a_sub\', 2) count=3
+  [0] a_sub\only-a.txt
+  [1] a_sub\only-r2a.txt
+  [2] a_sub\same.txt
+CreateList('a_sub\', 3) count=5
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+  [2] a_sub\only-a.txt
+  [3] a_sub\only-r2a.txt
+  [4] a_sub\same.txt
+CreateList('A_SUB/inner', 0) count=0
+CreateList('A_SUB/inner', 1) count=0
+CreateList('A_SUB/inner', 2) count=2
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+CreateList('A_SUB/inner', 3) count=2
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+CreateList('a_sub\inner', 0) count=0
+CreateList('a_sub\inner', 1) count=0
+CreateList('a_sub\inner', 2) count=2
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+CreateList('a_sub\inner', 3) count=2
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+CreateList('z_sub', 0) count=0
+CreateList('z_sub', 1) count=0
+CreateList('z_sub', 2) count=2
+  [0] z_sub\only-z.txt
+  [1] z_sub\same.txt
+CreateList('z_sub', 3) count=2
+  [0] z_sub\only-z.txt
+  [1] z_sub\same.txt
+CreateList('keep.d', 0) count=0
+CreateList('keep.d', 1) count=0
+CreateList('keep.d', 2) count=1
+  [0] keep.d\kept.txt
+CreateList('keep.d', 3) count=1
+  [0] keep.d\kept.txt
+CreateList('missing', 0) count=0
+CreateList('missing', 1) count=0
+CreateList('missing', 2) count=0
+CreateList('missing', 3) count=0
+CreateList('a_sub\missing', 0) count=0
+CreateList('a_sub\missing', 1) count=0
+CreateList('a_sub\missing', 2) count=0
+CreateList('a_sub\missing', 3) count=0
+CreateList('rel1', 0) count=0
+CreateList('rel1', 1) count=0
+CreateList('rel1', 2) count=0
+CreateList('rel1', 3) count=0
+CreateList('inner', 0) count=0
+CreateList('inner', 1) count=0
+CreateList('inner', 2) count=2
+  [0] inner\only-inner.txt
+  [1] inner\same.txt
+CreateList('inner', 3) count=2
+  [0] inner\only-inner.txt
+  [1] inner\same.txt
+CreateExtensionList('txt') count=12
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+  [2] a_sub\only-a.txt
+  [3] a_sub\only-r2a.txt
+  [4] a_sub\same.txt
+  [5] keep.d\kept.txt
+  [6] mixed.case.txt
+  [7] r2.txt
+  [8] same.txt
+  [9] sp ace.txt
+  [10] z_sub\only-z.txt
+  [11] z_sub\same.txt
+CreateExtensionList('*') count=12
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+  [2] a_sub\only-a.txt
+  [3] a_sub\only-r2a.txt
+  [4] a_sub\same.txt
+  [5] keep.d\kept.txt
+  [6] mixed.case.txt
+  [7] r2.txt
+  [8] same.txt
+  [9] sp ace.txt
+  [10] z_sub\only-z.txt
+  [11] z_sub\same.txt
+CreateExtensionList('d') count=0
+lastNames=3
+  r2.txt
+  only-r2a.txt
+  same.txt
+serialized
+== scenario 2
+SetBaseDirectory=1
+AddFolder(bulk)=1
+AddFolder(quirk)=1
+AddAutoPath(d03)=1
+AddAutoPath(d03 x)=1
+AddAutoPath(d11 x y)=1
+AddAutoPath(p)=1
+lookup 'same.dat': e=1 g=1 x-3
+lookup 'x\same.dat': e=1 g=1 x-3
+lookup 'y\leaf.txt': e=1 g=1 leaf-3
+lookup 'd03\same.dat': e=1 g=1 same-3
+lookup 'd05\x\same.dat': e=1 g=1 x-5
+lookup 'd13\x\y\leaf.txt': e=1 g=1 leaf-13
+lookup 'd03\x\y\leaf.txt': e=1 g=1 leaf-3
+lookup 'x\y\leaf.txt': e=1 g=1 leaf-3
+lookup 'f2_07.ext2': e=0 g=0 <none>
+lookup 'd07\f2_07.ext2': e=1 g=1 bulk
+lookup 'q\f.txt': e=0 g=0 <none>
+lookup 'q\z\f2.txt': e=0 g=0 <none>
+lookup 'p\q\other.txt': e=1 g=1 p-q-other
+lookup 'q\other.txt': e=1 g=1 p-q-other
+lookup 'top.txt': e=1 g=1 top
+lookup 'p\top.txt': e=0 g=0 <none>
+CreateList('', 0) count=16
+  [0] d00\
+  [1] d01\
+  [2] d02\
+  [3] d03\
+  [4] d04\
+  [5] d05\
+  [6] d06\
+  [7] d07\
+  [8] d08\
+  [9] d09\
+  [10] d10\
+  [11] d11\
+  [12] d12\
+  [13] d13\
+  [14] p\
+  [15] q\
+CreateList('', 1) count=46
+  [0] d00\
+  [1] d00\x\
+  [2] d00\x\y\
+  [3] d01\
+  [4] d01\x\
+  [5] d01\x\y\
+  [6] d02\
+  [7] d02\x\
+  [8] d02\x\y\
+  [9] d03\
+  [10] d03\x\
+  [11] d03\x\y\
+  [12] d04\
+  [13] d04\x\
+  [14] d04\x\y\
+  [15] d05\
+  [16] d05\x\
+  [17] d05\x\y\
+  [18] d06\
+  [19] d06\x\
+  [20] d06\x\y\
+  [21] d07\
+  [22] d07\x\
+  [23] d07\x\y\
+  [24] d08\
+  [25] d08\x\
+  [26] d08\x\y\
+  [27] d09\
+  [28] d09\x\
+  [29] d09\x\y\
+  [30] d10\
+  [31] d10\x\
+  [32] d10\x\y\
+  [33] d11\
+  [34] d11\x\
+  [35] d11\x\y\
+  [36] d12\
+  [37] d12\x\
+  [38] d12\x\y\
+  [39] d13\
+  [40] d13\x\
+  [41] d13\x\y\
+  [42] p\
+  [43] p\q\
+  [44] q\
+  [45] q\z\
+CreateList('', 2) count=1
+  [0] top.txt
+CreateList('', 3) count=130
+  [0] d00\f0_00.ext0
+  [1] d00\f1_00.ext1
+  [2] d00\f2_00.ext2
+  [3] d00\f3_00.ext0
+  [4] d00\f4_00.ext1
+  [5] d00\f5_00.ext2
+  [6] d00\same.dat
+  [7] d00\x\same.dat
+  [8] d00\x\y\leaf.txt
+  [9] d01\f0_01.ext0
+  [10] d01\f1_01.ext1
+  [11] d01\f2_01.ext2
+  [12] d01\f3_01.ext0
+  [13] d01\f4_01.ext1
+  [14] d01\f5_01.ext2
+  [15] d01\same.dat
+  [16] d01\x\same.dat
+  [17] d01\x\y\leaf.txt
+  [18] d02\f0_02.ext0
+  [19] d02\f1_02.ext1
+  [20] d02\f2_02.ext2
+  [21] d02\f3_02.ext0
+  [22] d02\f4_02.ext1
+  [23] d02\f5_02.ext2
+  [24] d02\same.dat
+  [25] d02\x\same.dat
+  [26] d02\x\y\leaf.txt
+  [27] d03\f0_03.ext0
+  [28] d03\f1_03.ext1
+  [29] d03\f2_03.ext2
+  [30] d03\f3_03.ext0
+  [31] d03\f4_03.ext1
+  [32] d03\f5_03.ext2
+  [33] d03\same.dat
+  [34] d03\x\same.dat
+  [35] d03\x\y\leaf.txt
+  [36] d04\f0_04.ext0
+  [37] d04\f1_04.ext1
+  [38] d04\f2_04.ext2
+  [39] d04\f3_04.ext0
+  [40] d04\f4_04.ext1
+  [41] d04\f5_04.ext2
+  [42] d04\same.dat
+  [43] d04\x\same.dat
+  [44] d04\x\y\leaf.txt
+  [45] d05\f0_05.ext0
+  [46] d05\f1_05.ext1
+  [47] d05\f2_05.ext2
+  [48] d05\f3_05.ext0
+  [49] d05\f4_05.ext1
+  [50] d05\f5_05.ext2
+  [51] d05\same.dat
+  [52] d05\x\same.dat
+  [53] d05\x\y\leaf.txt
+  [54] d06\f0_06.ext0
+  [55] d06\f1_06.ext1
+  [56] d06\f2_06.ext2
+  [57] d06\f3_06.ext0
+  [58] d06\f4_06.ext1
+  [59] d06\f5_06.ext2
+  [60] d06\same.dat
+  [61] d06\x\same.dat
+  [62] d06\x\y\leaf.txt
+  [63] d07\f0_07.ext0
+  [64] d07\f1_07.ext1
+  [65] d07\f2_07.ext2
+  [66] d07\f3_07.ext0
+  [67] d07\f4_07.ext1
+  [68] d07\f5_07.ext2
+  [69] d07\same.dat
+  [70] d07\x\same.dat
+  [71] d07\x\y\leaf.txt
+  [72] d08\f0_08.ext0
+  [73] d08\f1_08.ext1
+  [74] d08\f2_08.ext2
+  [75] d08\f3_08.ext0
+  [76] d08\f4_08.ext1
+  [77] d08\f5_08.ext2
+  [78] d08\same.dat
+  [79] d08\x\same.dat
+  [80] d08\x\y\leaf.txt
+  [81] d09\f0_09.ext0
+  [82] d09\f1_09.ext1
+  [83] d09\f2_09.ext2
+  [84] d09\f3_09.ext0
+  [85] d09\f4_09.ext1
+  [86] d09\f5_09.ext2
+  [87] d09\same.dat
+  [88] d09\x\same.dat
+  [89] d09\x\y\leaf.txt
+  [90] d10\f0_10.ext0
+  [91] d10\f1_10.ext1
+  [92] d10\f2_10.ext2
+  [93] d10\f3_10.ext0
+  [94] d10\f4_10.ext1
+  [95] d10\f5_10.ext2
+  [96] d10\same.dat
+  [97] d10\x\same.dat
+  [98] d10\x\y\leaf.txt
+  [99] d11\f0_11.ext0
+  [100] d11\f1_11.ext1
+  [101] d11\f2_11.ext2
+  [102] d11\f3_11.ext0
+  [103] d11\f4_11.ext1
+  [104] d11\f5_11.ext2
+  [105] d11\same.dat
+  [106] d11\x\same.dat
+  [107] d11\x\y\leaf.txt
+  [108] d12\f0_12.ext0
+  [109] d12\f1_12.ext1
+  [110] d12\f2_12.ext2
+  [111] d12\f3_12.ext0
+  [112] d12\f4_12.ext1
+  [113] d12\f5_12.ext2
+  [114] d12\same.dat
+  [115] d12\x\same.dat
+  [116] d12\x\y\leaf.txt
+  [117] d13\f0_13.ext0
+  [118] d13\f1_13.ext1
+  [119] d13\f2_13.ext2
+  [120] d13\f3_13.ext0
+  [121] d13\f4_13.ext1
+  [122] d13\f5_13.ext2
+  [123] d13\same.dat
+  [124] d13\x\same.dat
+  [125] d13\x\y\leaf.txt
+  [126] p\q\other.txt
+  [127] q\f.txt
+  [128] q\z\f2.txt
+  [129] top.txt
+CreateList('d03', 0) count=1
+  [0] d03\x\
+CreateList('d03', 1) count=2
+  [0] d03\x\
+  [1] d03\x\y\
+CreateList('d03', 2) count=7
+  [0] d03\f0_03.ext0
+  [1] d03\f1_03.ext1
+  [2] d03\f2_03.ext2
+  [3] d03\f3_03.ext0
+  [4] d03\f4_03.ext1
+  [5] d03\f5_03.ext2
+  [6] d03\same.dat
+CreateList('d03', 3) count=9
+  [0] d03\f0_03.ext0
+  [1] d03\f1_03.ext1
+  [2] d03\f2_03.ext2
+  [3] d03\f3_03.ext0
+  [4] d03\f4_03.ext1
+  [5] d03\f5_03.ext2
+  [6] d03\same.dat
+  [7] d03\x\same.dat
+  [8] d03\x\y\leaf.txt
+CreateList('d03\x', 0) count=1
+  [0] d03\x\y\
+CreateList('d03\x', 1) count=1
+  [0] d03\x\y\
+CreateList('d03\x', 2) count=1
+  [0] d03\x\same.dat
+CreateList('d03\x', 3) count=2
+  [0] d03\x\same.dat
+  [1] d03\x\y\leaf.txt
+CreateList('x', 0) count=1
+  [0] x\y\
+CreateList('x', 1) count=1
+  [0] x\y\
+CreateList('x', 2) count=1
+  [0] x\same.dat
+CreateList('x', 3) count=2
+  [0] x\same.dat
+  [1] x\y\leaf.txt
+CreateList('y', 0) count=0
+CreateList('y', 1) count=0
+CreateList('y', 2) count=1
+  [0] y\leaf.txt
+CreateList('y', 3) count=1
+  [0] y\leaf.txt
+CreateList('q', 0) count=1
+  [0] q\z\
+CreateList('q', 1) count=1
+  [0] q\z\
+CreateList('q', 2) count=2
+  [0] q\f.txt
+  [1] q\other.txt
+CreateList('q', 3) count=3
+  [0] q\f.txt
+  [1] q\other.txt
+  [2] q\z\f2.txt
+CreateList('p', 0) count=1
+  [0] p\q\
+CreateList('p', 1) count=1
+  [0] p\q\
+CreateList('p', 2) count=0
+CreateList('p', 3) count=1
+  [0] p\q\other.txt
+CreateList('p\q', 0) count=0
+CreateList('p\q', 1) count=0
+CreateList('p\q', 2) count=1
+  [0] p\q\other.txt
+CreateList('p\q', 3) count=1
+  [0] p\q\other.txt
+CreateExtensionList('ext1') count=28
+  [0] d00\f1_00.ext1
+  [1] d00\f4_00.ext1
+  [2] d01\f1_01.ext1
+  [3] d01\f4_01.ext1
+  [4] d02\f1_02.ext1
+  [5] d02\f4_02.ext1
+  [6] d03\f1_03.ext1
+  [7] d03\f4_03.ext1
+  [8] d04\f1_04.ext1
+  [9] d04\f4_04.ext1
+  [10] d05\f1_05.ext1
+  [11] d05\f4_05.ext1
+  [12] d06\f1_06.ext1
+  [13] d06\f4_06.ext1
+  [14] d07\f1_07.ext1
+  [15] d07\f4_07.ext1
+  [16] d08\f1_08.ext1
+  [17] d08\f4_08.ext1
+  [18] d09\f1_09.ext1
+  [19] d09\f4_09.ext1
+  [20] d10\f1_10.ext1
+  [21] d10\f4_10.ext1
+  [22] d11\f1_11.ext1
+  [23] d11\f4_11.ext1
+  [24] d12\f1_12.ext1
+  [25] d12\f4_12.ext1
+  [26] d13\f1_13.ext1
+  [27] d13\f4_13.ext1
+CreateExtensionList('dat') count=28
+  [0] d00\same.dat
+  [1] d00\x\same.dat
+  [2] d01\same.dat
+  [3] d01\x\same.dat
+  [4] d02\same.dat
+  [5] d02\x\same.dat
+  [6] d03\same.dat
+  [7] d03\x\same.dat
+  [8] d04\same.dat
+  [9] d04\x\same.dat
+  [10] d05\same.dat
+  [11] d05\x\same.dat
+  [12] d06\same.dat
+  [13] d06\x\same.dat
+  [14] d07\same.dat
+  [15] d07\x\same.dat
+  [16] d08\same.dat
+  [17] d08\x\same.dat
+  [18] d09\same.dat
+  [19] d09\x\same.dat
+  [20] d10\same.dat
+  [21] d10\x\same.dat
+  [22] d11\same.dat
+  [23] d11\x\same.dat
+  [24] d12\same.dat
+  [25] d12\x\same.dat
+  [26] d13\same.dat
+  [27] d13\x\same.dat
+CreateExtensionList('txt') count=18
+  [0] d00\x\y\leaf.txt
+  [1] d01\x\y\leaf.txt
+  [2] d02\x\y\leaf.txt
+  [3] d03\x\y\leaf.txt
+  [4] d04\x\y\leaf.txt
+  [5] d05\x\y\leaf.txt
+  [6] d06\x\y\leaf.txt
+  [7] d07\x\y\leaf.txt
+  [8] d08\x\y\leaf.txt
+  [9] d09\x\y\leaf.txt
+  [10] d10\x\y\leaf.txt
+  [11] d11\x\y\leaf.txt
+  [12] d12\x\y\leaf.txt
+  [13] d13\x\y\leaf.txt
+  [14] p\q\other.txt
+  [15] q\f.txt
+  [16] q\z\f2.txt
+  [17] top.txt
+Deserialize2=1
+lookup 'same.dat': e=1 g=1 x-3
+lookup 'x\same.dat': e=1 g=1 x-3
+lookup 'y\leaf.txt': e=1 g=1 leaf-3
+lookup 'd03\same.dat': e=1 g=1 same-3
+lookup 'd05\x\same.dat': e=1 g=1 x-5
+lookup 'd13\x\y\leaf.txt': e=1 g=1 leaf-13
+lookup 'd03\x\y\leaf.txt': e=1 g=1 leaf-3
+lookup 'x\y\leaf.txt': e=1 g=1 leaf-3
+lookup 'f2_07.ext2': e=0 g=0 <none>
+lookup 'd07\f2_07.ext2': e=1 g=1 bulk
+lookup 'q\f.txt': e=0 g=0 <none>
+lookup 'q\z\f2.txt': e=0 g=0 <none>
+lookup 'p\q\other.txt': e=1 g=1 p-q-other
+lookup 'q\other.txt': e=1 g=1 p-q-other
+lookup 'top.txt': e=1 g=1 top
+lookup 'p\top.txt': e=0 g=0 <none>
+CreateList('', 0) count=16
+  [0] d00\
+  [1] d01\
+  [2] d02\
+  [3] d03\
+  [4] d04\
+  [5] d05\
+  [6] d06\
+  [7] d07\
+  [8] d08\
+  [9] d09\
+  [10] d10\
+  [11] d11\
+  [12] d12\
+  [13] d13\
+  [14] p\
+  [15] q\
+CreateList('', 1) count=46
+  [0] d00\
+  [1] d00\x\
+  [2] d00\x\y\
+  [3] d01\
+  [4] d01\x\
+  [5] d01\x\y\
+  [6] d02\
+  [7] d02\x\
+  [8] d02\x\y\
+  [9] d03\
+  [10] d03\x\
+  [11] d03\x\y\
+  [12] d04\
+  [13] d04\x\
+  [14] d04\x\y\
+  [15] d05\
+  [16] d05\x\
+  [17] d05\x\y\
+  [18] d06\
+  [19] d06\x\
+  [20] d06\x\y\
+  [21] d07\
+  [22] d07\x\
+  [23] d07\x\y\
+  [24] d08\
+  [25] d08\x\
+  [26] d08\x\y\
+  [27] d09\
+  [28] d09\x\
+  [29] d09\x\y\
+  [30] d10\
+  [31] d10\x\
+  [32] d10\x\y\
+  [33] d11\
+  [34] d11\x\
+  [35] d11\x\y\
+  [36] d12\
+  [37] d12\x\
+  [38] d12\x\y\
+  [39] d13\
+  [40] d13\x\
+  [41] d13\x\y\
+  [42] p\
+  [43] p\q\
+  [44] q\
+  [45] q\z\
+CreateList('', 2) count=1
+  [0] top.txt
+CreateList('', 3) count=130
+  [0] d00\f0_00.ext0
+  [1] d00\f1_00.ext1
+  [2] d00\f2_00.ext2
+  [3] d00\f3_00.ext0
+  [4] d00\f4_00.ext1
+  [5] d00\f5_00.ext2
+  [6] d00\same.dat
+  [7] d00\x\same.dat
+  [8] d00\x\y\leaf.txt
+  [9] d01\f0_01.ext0
+  [10] d01\f1_01.ext1
+  [11] d01\f2_01.ext2
+  [12] d01\f3_01.ext0
+  [13] d01\f4_01.ext1
+  [14] d01\f5_01.ext2
+  [15] d01\same.dat
+  [16] d01\x\same.dat
+  [17] d01\x\y\leaf.txt
+  [18] d02\f0_02.ext0
+  [19] d02\f1_02.ext1
+  [20] d02\f2_02.ext2
+  [21] d02\f3_02.ext0
+  [22] d02\f4_02.ext1
+  [23] d02\f5_02.ext2
+  [24] d02\same.dat
+  [25] d02\x\same.dat
+  [26] d02\x\y\leaf.txt
+  [27] d03\f0_03.ext0
+  [28] d03\f1_03.ext1
+  [29] d03\f2_03.ext2
+  [30] d03\f3_03.ext0
+  [31] d03\f4_03.ext1
+  [32] d03\f5_03.ext2
+  [33] d03\same.dat
+  [34] d03\x\same.dat
+  [35] d03\x\y\leaf.txt
+  [36] d04\f0_04.ext0
+  [37] d04\f1_04.ext1
+  [38] d04\f2_04.ext2
+  [39] d04\f3_04.ext0
+  [40] d04\f4_04.ext1
+  [41] d04\f5_04.ext2
+  [42] d04\same.dat
+  [43] d04\x\same.dat
+  [44] d04\x\y\leaf.txt
+  [45] d05\f0_05.ext0
+  [46] d05\f1_05.ext1
+  [47] d05\f2_05.ext2
+  [48] d05\f3_05.ext0
+  [49] d05\f4_05.ext1
+  [50] d05\f5_05.ext2
+  [51] d05\same.dat
+  [52] d05\x\same.dat
+  [53] d05\x\y\leaf.txt
+  [54] d06\f0_06.ext0
+  [55] d06\f1_06.ext1
+  [56] d06\f2_06.ext2
+  [57] d06\f3_06.ext0
+  [58] d06\f4_06.ext1
+  [59] d06\f5_06.ext2
+  [60] d06\same.dat
+  [61] d06\x\same.dat
+  [62] d06\x\y\leaf.txt
+  [63] d07\f0_07.ext0
+  [64] d07\f1_07.ext1
+  [65] d07\f2_07.ext2
+  [66] d07\f3_07.ext0
+  [67] d07\f4_07.ext1
+  [68] d07\f5_07.ext2
+  [69] d07\same.dat
+  [70] d07\x\same.dat
+  [71] d07\x\y\leaf.txt
+  [72] d08\f0_08.ext0
+  [73] d08\f1_08.ext1
+  [74] d08\f2_08.ext2
+  [75] d08\f3_08.ext0
+  [76] d08\f4_08.ext1
+  [77] d08\f5_08.ext2
+  [78] d08\same.dat
+  [79] d08\x\same.dat
+  [80] d08\x\y\leaf.txt
+  [81] d09\f0_09.ext0
+  [82] d09\f1_09.ext1
+  [83] d09\f2_09.ext2
+  [84] d09\f3_09.ext0
+  [85] d09\f4_09.ext1
+  [86] d09\f5_09.ext2
+  [87] d09\same.dat
+  [88] d09\x\same.dat
+  [89] d09\x\y\leaf.txt
+  [90] d10\f0_10.ext0
+  [91] d10\f1_10.ext1
+  [92] d10\f2_10.ext2
+  [93] d10\f3_10.ext0
+  [94] d10\f4_10.ext1
+  [95] d10\f5_10.ext2
+  [96] d10\same.dat
+  [97] d10\x\same.dat
+  [98] d10\x\y\leaf.txt
+  [99] d11\f0_11.ext0
+  [100] d11\f1_11.ext1
+  [101] d11\f2_11.ext2
+  [102] d11\f3_11.ext0
+  [103] d11\f4_11.ext1
+  [104] d11\f5_11.ext2
+  [105] d11\same.dat
+  [106] d11\x\same.dat
+  [107] d11\x\y\leaf.txt
+  [108] d12\f0_12.ext0
+  [109] d12\f1_12.ext1
+  [110] d12\f2_12.ext2
+  [111] d12\f3_12.ext0
+  [112] d12\f4_12.ext1
+  [113] d12\f5_12.ext2
+  [114] d12\same.dat
+  [115] d12\x\same.dat
+  [116] d12\x\y\leaf.txt
+  [117] d13\f0_13.ext0
+  [118] d13\f1_13.ext1
+  [119] d13\f2_13.ext2
+  [120] d13\f3_13.ext0
+  [121] d13\f4_13.ext1
+  [122] d13\f5_13.ext2
+  [123] d13\same.dat
+  [124] d13\x\same.dat
+  [125] d13\x\y\leaf.txt
+  [126] p\q\other.txt
+  [127] q\f.txt
+  [128] q\z\f2.txt
+  [129] top.txt
+CreateList('d03', 0) count=1
+  [0] d03\x\
+CreateList('d03', 1) count=2
+  [0] d03\x\
+  [1] d03\x\y\
+CreateList('d03', 2) count=7
+  [0] d03\f0_03.ext0
+  [1] d03\f1_03.ext1
+  [2] d03\f2_03.ext2
+  [3] d03\f3_03.ext0
+  [4] d03\f4_03.ext1
+  [5] d03\f5_03.ext2
+  [6] d03\same.dat
+CreateList('d03', 3) count=9
+  [0] d03\f0_03.ext0
+  [1] d03\f1_03.ext1
+  [2] d03\f2_03.ext2
+  [3] d03\f3_03.ext0
+  [4] d03\f4_03.ext1
+  [5] d03\f5_03.ext2
+  [6] d03\same.dat
+  [7] d03\x\same.dat
+  [8] d03\x\y\leaf.txt
+CreateList('x', 0) count=1
+  [0] x\y\
+CreateList('x', 1) count=1
+  [0] x\y\
+CreateList('x', 2) count=1
+  [0] x\same.dat
+CreateList('x', 3) count=2
+  [0] x\same.dat
+  [1] x\y\leaf.txt
+CreateList('q', 0) count=1
+  [0] q\z\
+CreateList('q', 1) count=1
+  [0] q\z\
+CreateList('q', 2) count=2
+  [0] q\f.txt
+  [1] q\other.txt
+CreateList('q', 3) count=3
+  [0] q\f.txt
+  [1] q\other.txt
+  [2] q\z\f2.txt
+CreateList('p', 0) count=1
+  [0] p\q\
+CreateList('p', 1) count=1
+  [0] p\q\
+CreateList('p', 2) count=0
+CreateList('p', 3) count=1
+  [0] p\q\other.txt
+Deserialize=1
+-- loaded
+lookup 'same.txt': e=1 g=1 rel2-a-same
+lookup 'only-a.txt': e=1 g=1 only-a
+lookup 'only-z.txt': e=1 g=1 only-z
+lookup 'only-inner.txt': e=1 g=1 only-inner
+lookup 'r2.txt': e=1 g=1 r2
+lookup 'mixed.case.txt': e=1 g=1 mixed
+lookup 'sp ace.txt': e=1 g=1 spaced
+lookup 'a_sub\same.txt': e=1 g=1 rel2-a-same
+lookup 'a_sub/same.txt': e=1 g=1 rel2-a-same
+lookup 'A_SUB\Same.TXT': e=1 g=1 rel2-a-same
+lookup 'z_sub\same.txt': e=1 g=1 z
+lookup 'a_sub\inner\same.txt': e=1 g=1 inner
+lookup 'inner\same.txt': e=1 g=1 inner
+lookup 'a_sub\only-a.txt': e=1 g=1 only-a
+lookup 'a_sub\only-z.txt': e=0 g=0 <none>
+lookup 'z_sub\only-z.txt': e=1 g=1 only-z
+lookup 'a_sub\inner\only-inner.txt': e=1 g=1 only-inner
+lookup 'rel1\a_sub\same.txt': e=0 g=0 <none>
+lookup 'missing\same.txt': e=0 g=0 <none>
+lookup 'a_sub\missing.txt': e=0 g=0 <none>
+lookup 'a_sub': e=0 g=0 <none>
+lookup 'a_sub\': e=0 g=0 <none>
+lookup '\same.txt': e=1 g=1 rel2-a-same
+lookup 'a_sub\inner\': e=0 g=0 <none>
+lookup 'keep.d\kept.txt': e=1 g=1 kept
+lookup 'kept.txt': e=0 g=0 <none>
+lookup 'hidden.txt': e=0 g=0 <none>
+lookup '.works1\hidden.txt': e=0 g=0 <none>
+CreateList('', 0) count=3
+  [0] a_sub\
+  [1] keep.d\
+  [2] z_sub\
+CreateList('', 1) count=4
+  [0] a_sub\
+  [1] a_sub\inner\
+  [2] keep.d\
+  [3] z_sub\
+CreateList('', 2) count=4
+  [0] mixed.case.txt
+  [1] r2.txt
+  [2] same.txt
+  [3] sp ace.txt
+CreateList('', 3) count=12
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+  [2] a_sub\only-a.txt
+  [3] a_sub\only-r2a.txt
+  [4] a_sub\same.txt
+  [5] keep.d\kept.txt
+  [6] mixed.case.txt
+  [7] r2.txt
+  [8] same.txt
+  [9] sp ace.txt
+  [10] z_sub\only-z.txt
+  [11] z_sub\same.txt
+CreateList('*', 0) count=3
+  [0] a_sub\
+  [1] keep.d\
+  [2] z_sub\
+CreateList('*', 1) count=4
+  [0] a_sub\
+  [1] a_sub\inner\
+  [2] keep.d\
+  [3] z_sub\
+CreateList('*', 2) count=4
+  [0] mixed.case.txt
+  [1] r2.txt
+  [2] same.txt
+  [3] sp ace.txt
+CreateList('*', 3) count=12
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+  [2] a_sub\only-a.txt
+  [3] a_sub\only-r2a.txt
+  [4] a_sub\same.txt
+  [5] keep.d\kept.txt
+  [6] mixed.case.txt
+  [7] r2.txt
+  [8] same.txt
+  [9] sp ace.txt
+  [10] z_sub\only-z.txt
+  [11] z_sub\same.txt
+CreateList('a_sub', 0) count=1
+  [0] a_sub\inner\
+CreateList('a_sub', 1) count=1
+  [0] a_sub\inner\
+CreateList('a_sub', 2) count=3
+  [0] a_sub\only-a.txt
+  [1] a_sub\only-r2a.txt
+  [2] a_sub\same.txt
+CreateList('a_sub', 3) count=5
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+  [2] a_sub\only-a.txt
+  [3] a_sub\only-r2a.txt
+  [4] a_sub\same.txt
+CreateList('a_sub\', 0) count=1
+  [0] a_sub\inner\
+CreateList('a_sub\', 1) count=1
+  [0] a_sub\inner\
+CreateList('a_sub\', 2) count=3
+  [0] a_sub\only-a.txt
+  [1] a_sub\only-r2a.txt
+  [2] a_sub\same.txt
+CreateList('a_sub\', 3) count=5
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+  [2] a_sub\only-a.txt
+  [3] a_sub\only-r2a.txt
+  [4] a_sub\same.txt
+CreateList('A_SUB/inner', 0) count=0
+CreateList('A_SUB/inner', 1) count=0
+CreateList('A_SUB/inner', 2) count=2
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+CreateList('A_SUB/inner', 3) count=2
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+CreateList('a_sub\inner', 0) count=0
+CreateList('a_sub\inner', 1) count=0
+CreateList('a_sub\inner', 2) count=2
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+CreateList('a_sub\inner', 3) count=2
+  [0] a_sub\inner\only-inner.txt
+  [1] a_sub\inner\same.txt
+CreateList('z_sub', 0) count=0
+CreateList('z_sub', 1) count=0
+CreateList('z_sub', 2) count=2
+  [0] z_sub\only-z.txt
+  [1] z_sub\same.txt
+CreateList('z_sub', 3) count=2
+  [0] z_sub\only-z.txt
+  [1] z_sub\same.txt
+CreateList('keep.d', 0) count=0
+CreateList('keep.d', 1) count=0
+CreateList('keep.d', 2) count=1
+  [0] keep.d\kept.txt
+CreateList('keep.d', 3) count=1
+  [0] keep.d\kept.txt
+CreateList('missing', 0) count=0
+CreateList('missing', 1) count=0
+CreateList('missing', 2) count=0
+CreateList('missing', 3) count=0
+CreateList('a_sub\missing', 0) count=0
+CreateList('a_sub\missing', 1) count=0
+CreateList('a_sub\missing', 2) count=0
+CreateList('a_sub\missing', 3) count=0
+CreateList('rel1', 0) count=0
+CreateList('rel1', 1) count=0
+CreateList('rel1', 2) count=0
+CreateList('rel1', 3) count=0
+CreateList('inner', 0) count=0
+CreateList('inner', 1) count=0
+CreateList('inner', 2) count=2
+  [0] inner\only-inner.txt
+  [1] inner\same.txt
+CreateList('inner', 3) count=2
+  [0] inner\only-inner.txt
+  [1] inner\same.txt

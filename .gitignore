@@ -1,0 +1,12 @@
+# build trees and local outputs
+build/
+build-*/
+dist/*.dll
+dist/*.pdb
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.lib
+# scratch
+*.tmp
