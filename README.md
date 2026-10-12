@@ -133,3 +133,7 @@ slice, including the original `CreateileMemory`/`DeleteileMemory` spellings.
 
 ## Deployment
 The reconstructed DLL is linked with the static C/C++ runtime so that, like the original, it needs only system DLLs (KERNEL32, BCRYPT, SETUPAPI, HID, DINPUT8). Check with `dumpbin /dependents cm3d2_reconstructed.dll` after changing dependencies.
+
+## License
+
+The code written for this project is released into the public domain under [The Unlicense](LICENSE). The Unlicense does not cover `third_party/`, which keeps its own licenses and notices (see "Third-party code" above).
